@@ -8,26 +8,28 @@
     tools:context="com.tamoghnodas.android.phcalculator.MainActivity">
 
     <android.support.constraint.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <View
             android:id="@+id/pixel_color"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginEnd="177dp"
-            android:layout_marginStart="177dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:layout_marginTop="24dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/color_label"
+            app:layout_constraintTop_toBottomOf="@+id/image" />
 
         <LinearLayout
             android:id="@+id/RGBlabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
             android:orientation="horizontal"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/pixel_color">
+            app:layout_constraintBottom_toTopOf="@+id/image_loader_button"
+            app:layout_constraintTop_toBottomOf="@+id/pixel_color"
+            app:layout_constraintVertical_chainStyle="spread">
 
             <TextView
                 android:id="@+id/Rlabel"
@@ -35,6 +37,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="1dp"
                 android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:textAppearance="?android:textAppearanceMedium"
                 android:textColor="#F44336"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -46,6 +50,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="1dp"
                 android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:textAppearance="?android:textAppearanceMedium"
                 android:textColor="#4CAF50"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -57,39 +63,57 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="1dp"
                 android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:textAppearance="?android:textAppearanceMedium"
                 android:textColor="#3F51B5"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </LinearLayout>
 
-    <ImageView
-        android:id="@+id/image"
-        android:layout_width="wrap_content"
-        android:layout_height="300dp"
-        android:paddingBottom="42dp"
-        android:paddingTop="50dp"
-        android:cropToPadding="true"
-        android:contentDescription="Image selected for pH calculation"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RGBlabel" />
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="Image selected for pH calculation"
+            android:cropToPadding="true"
+            android:paddingBottom="42dp"
+            android:paddingTop="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/image_loader_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Select Image"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image" />
+        <Button
+            android:id="@+id/image_loader_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Select Image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/RGBlabel" />
+
+
+        <TextView
+            android:id="@+id/color_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="340dp"
+            android:text="The selected color is : "
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/pixel_color"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </android.support.constraint.ConstraintLayout>
 
 </LinearLayout>
